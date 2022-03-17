@@ -22,10 +22,10 @@ function CategoryMenu() {
     }
   }, [categoryData, dispatch]);
 
-  const handleClick = id => {
+  const handleClick = (id) => {
     dispatch({
       type: UPDATE_CURRENT_CATEGORY,
-      currentCategory: id
+      currentCategory: id,
     });
   };
 

@@ -11,7 +11,7 @@ function CategoryMenu() {
 
   const { categories } = state;
 
-  const { loading, data } = useQuery(QUERY_CATEGORIES);
+  const { loading, data: categoryData } = useQuery(QUERY_CATEGORIES);
 
   useEffect(() => {
     // if categoryData exists or has changed from the response of useQuery, then run dispatch()
@@ -32,7 +32,7 @@ function CategoryMenu() {
         });
       });
     }
-  }, [categoryData, dispatch]);
+  }, [categoryData, loading, dispatch]);
 
   const handleClick = (id) => {
     dispatch({
